@@ -1,0 +1,39 @@
+{
+  "name": "react-parcel",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "src/index.tsx",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prebuild": "run-s clean",
+    "build": "parcel build public/index.html --no-source-maps",
+    "start": "parcel public/index.html --open",
+    "clean": "rimraf ./dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format:check": "prettier --check './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "check": "tsc --noEmit",
+    "ci": "yarn build && yarn lint && yarn check"
+  },
+  "devDependencies": {
+    "@parcel/transformer-typescript-tsc": "^2.9.3",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-router-dom": "^5.3.3",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^3.0.1",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "components": "^0.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "src": "^1.1.2",
+    "typescript": "*"
+  }
+}
